@@ -170,7 +170,7 @@ console.log(newRestaurant.name);
 const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'Ristorante Roma';
 console.log(restaurantCopy.name); */
-
+/* 
 //Rest Pattern and Parameters
 
 //1) Destructuring
@@ -205,4 +205,34 @@ add(8, 2, 5, 3, 2, 1, 4);
 
 const x = [23, 5, 7];
 add(...x);
-restaurant.orderPizza('mushroom', 'onion', 'olives', 'spinach');
+restaurant.orderPizza('mushroom', 'onion', 'olives', 'spinach'); */
+
+//Short Circuiting (&& and ||)
+
+//OR Operator: will return the first truthy value of all the operands, or the last value if all of them are falsy
+console.log('--- OR ---');
+//Use ANY data type, return ANY data type, short-ciruiting
+console.log(3 || 'Jonas');
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
+
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+restaurant.numGuest = 0;
+const guest = restaurant.numGuest ? restaurant.numGuest : 10;
+console.log(guest);
+
+const guest2 = restaurant.numGuest || 10;
+console.log(guest2);
+//AND Operator: will return the first falsy value of all the operands, or the last value if all of them are truthy
+console.log('--- AND ---');
+console.log(0 && 'Jonas');
+console.log(7 && 'Jonas');
+
+console.log('hello' && 23 && null && 'jonas');
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushroom', 'spinach');
+}
+restaurant.orderPizza && restaurant.orderPizza('mushroom', 'spinach');
