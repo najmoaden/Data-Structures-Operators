@@ -15,7 +15,7 @@ const openingHours = {
     open: 11,
     close: 23,
   },
-  [`day--${2 + 4}`]: {
+  [weekdays[5]]: {
     open: 0, // Open 24 hours
     close: 24,
   },
@@ -358,3 +358,28 @@ for (const [i, el] of menu.entries()) {
 }
 // console.log([...menu.entries()]);
  */
+
+//Optional Chaining (?.)
+
+if (restaurant.openingHours && restaurant.openingHours.mon)
+  console.log(restaurant.openingHours.mon.open);
+
+// console.log(restaurant.openingHours.mon.open); //undefined at mon, throwing error msg
+//With optional chaining
+console.log(restaurant.openingHours.mon?.open); //displays undefined
+console.log(restaurant.openingHours?.mon?.open); //does the same like the if-function
+
+//Example
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`On ${day}, we open at ${open}`);
+}
+
+//Methods
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exit');
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exit');
+
+//Arrays
+const users = [{ name: 'Jonas', email: 'hello@jonas.io' }];
+console.log(users[0]?.name ?? 'User array empty');
