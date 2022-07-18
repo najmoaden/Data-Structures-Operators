@@ -206,7 +206,7 @@ add(8, 2, 5, 3, 2, 1, 4);
 const x = [23, 5, 7];
 add(...x);
 restaurant.orderPizza('mushroom', 'onion', 'olives', 'spinach'); */
-
+/* 
 //Short Circuiting (&& and ||)
 
 //OR Operator: will return the first truthy value of all the operands, or the last value if all of them are falsy
@@ -236,3 +236,14 @@ if (restaurant.orderPizza) {
   restaurant.orderPizza('mushroom', 'spinach');
 }
 restaurant.orderPizza && restaurant.orderPizza('mushroom', 'spinach');
+ */
+
+//The Nullish Coalescing Operator (??)
+
+restaurant.numGuest = 0;
+const guest = restaurant.numGuest || 10;
+console.log(guest);
+
+//Nullish: null and undefined (NOT 0 or '')
+const guestCorrect = restaurant.numGuest ?? 10;
+console.log(guestCorrect);
