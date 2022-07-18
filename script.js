@@ -247,7 +247,7 @@ console.log(guest);
 //Nullish: null and undefined (NOT 0 or '')
 const guestCorrect = restaurant.numGuest ?? 10;
 console.log(guestCorrect); */
-
+/* 
 //Logical Assignment Operator
 
 const rest1 = {
@@ -278,3 +278,73 @@ rest1.owner &&= '<ANONYMOUS>';
 rest2.owner &&= '<ANONYMOUS>';
 console.log(rest1);
 console.log(rest2);
+ */
+
+//Coding Challenge#1
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+//1.Array players1 and players2
+const [players1, players2] = game.players;
+console.log(players1);
+console.log(players2);
+//2. Variable gk and array fieldPlayers
+const [gk, ...fieldPlayers] = players1;
+console.log(gk, fieldPlayers);
+//3. Array allPlayers
+const allPlayers = [...players1, ...players2];
+console.log(allPlayers);
+//4. Array players1Final containing all the original team1 players plus Thiago, Coutinho and Perisic
+const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+console.log(players1Final);
+//5. Variable for team1, draw and team2
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+console.log(team1, draw, team2);
+//6. Function printGoals
+const printGoals = function (...players) {
+  console.log(`${players.length} goals were scored`);
+};
+// printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+printGoals(...game.scored);
+//7.
+team1 < team2 && console.log('Team 1 is like to win.');
+team2 < team1 && console.log('Team 1 is like to win.');
