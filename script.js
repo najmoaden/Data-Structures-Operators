@@ -279,7 +279,7 @@ rest2.owner &&= '<ANONYMOUS>';
 console.log(rest1);
 console.log(rest2);
  */
-
+/* 
 //Coding Challenge#1
 const game = {
   team1: 'Bayern Munich',
@@ -347,4 +347,14 @@ const printGoals = function (...players) {
 printGoals(...game.scored);
 //7.
 team1 < team2 && console.log('Team 1 is like to win.');
-team2 < team1 && console.log('Team 1 is like to win.');
+team2 < team1 && console.log('Team 1 is like to win.'); */
+
+//Looping Arrays: The for-of loop
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}:${el}`);
+}
+// console.log([...menu.entries()]);
