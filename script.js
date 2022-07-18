@@ -11,6 +11,9 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
 
   openingHours: {
     thu: {
@@ -27,3 +30,41 @@ const restaurant = {
     },
   },
 };
+
+//Destructing Arrays
+
+const arr = [2, 3, 4];
+//Tedious way
+const a = arr[0];
+const b = arr[1];
+const c = arr[2];
+//Faster way
+const [x, y, z] = arr;
+console.log(x, y, z);
+
+let [main, , secondary] = restaurant.categories;
+console.log(main, secondary);
+//switching variables
+//Tedious way
+let temp = main;
+main = secondary;
+secondary = temp;
+console.log(main, secondary);
+//Faster way
+[main, secondary] = [secondary, main];
+
+console.log(restaurant.order(2, 0));
+//Receive 2 return values from a function
+const [starter, mainCourse] = restaurant.order(2, 0);
+console.log(starter, mainCourse);
+
+//Nested destructing
+const nested = [2, 4, [5, 6]];
+// const [i, , j] = nested;
+// console.log(i, j);//5 and 6
+const [i, , [j, k]] = nested;
+console.log(i, j, k); //2, 5 and 6
+
+//Defaukt values
+const [p = 1, q = 1, r = 1] = [8, 9];
+console.log(p, q, r);
