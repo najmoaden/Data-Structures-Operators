@@ -410,7 +410,7 @@ for (const [day, { open, close }] of entries) {
   console.log(`On ${day} we open on ${open} and close at ${close}`);
 }
  */
-
+/* 
 //Coding Challenge#2
 
 //1. Loop over game.scored array & print to the console ("Goal 1: Lewandowski")
@@ -434,4 +434,40 @@ const scorers = {};
 for (const player of game.scored) {
   scorers[player] ? scorers[player]++ : (scorers[player] = 1);
 }
-console.log(scorers);
+console.log(scorers); */
+
+//Sets
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pizza',
+  'Pizza',
+]);
+console.log(ordersSet); //{'Pasta', 'Pizza', 'Risotto'}
+
+console.log(new Set('Jonas')); //{'J', 'o', 'n', 'a', 's'}
+
+console.log(ordersSet.size); //3
+console.log(ordersSet.has('Pizza')); //true
+console.log(ordersSet.has('Bread')); //false
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread'); //Adds only Garlic Bread once to the set unlike array
+console.log(ordersSet); //{'Pasta', 'Pizza', 'Risotto', 'Garlic Bread'}
+ordersSet.delete('Risotto'); //Deletes Risotto from the set
+console.log(ordersSet); //{'Pasta', 'Pizza', 'Garlic Bread'}
+// ordersSet.clear();//Deletes all at once
+// console.log(ordersSet);//{size: 0}
+
+for (const order of ordersSet) console.log(order); //Pasta Pizza Garlic Bread
+
+//Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique); //['Waiter', 'Chef', 'Manager']
+console.log(new Set(staff).size); //3
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+); //3
+console.log(new Set('jonasschmedtmann').size); //11
