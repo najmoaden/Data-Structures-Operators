@@ -278,8 +278,7 @@ rest2.owner &&= '<ANONYMOUS>';
 console.log(rest1);
 console.log(rest2);
  */
-/* 
-//Coding Challenge#1
+
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -320,6 +319,8 @@ const game = {
     team2: 6.5,
   },
 };
+/* 
+//Coding Challenge#1
 //1.Array players1 and players2
 const [players1, players2] = game.players;
 console.log(players1);
@@ -383,7 +384,7 @@ console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exit');
 //Arrays
 const users = [{ name: 'Jonas', email: 'hello@jonas.io' }];
 console.log(users[0]?.name ?? 'User array empty'); */
-
+/* 
 //Looping Objects: Object Keys, Values and Entries
 
 //Property Names
@@ -408,3 +409,24 @@ console.log(entries);
 for (const [day, { open, close }] of entries) {
   console.log(`On ${day} we open on ${open} and close at ${close}`);
 }
+ */
+
+//Coding Challenge#2
+
+//1. Loop over game.scored array & print to the console ("Goal 1: Lewandowski")
+let sum = 0;
+for (const score of game.scored) {
+  console.log(`Goal ${(sum += 1)}: ${score}`);
+}
+//2. Use loop to calculate the average odd and log it to the console
+const gameValue = Object.values(game.odds);
+console.log(gameValue);
+for (const avg of gameValue) sum += avg;
+console.log(sum);
+console.log(`${sum / 3}`);
+//3. Print the odds to the console like this: Odd of victory Bayern Munich: 1.33, Odd of draw: 3.25, Odd of victory Borrussia Dortmund: 6.5
+const gameEntries = Object.entries(game.odds);
+for (const [team, odd] of gameEntries) {
+  console.log(`Odd of ${team === 'x' ? 'draw' : 'victory'}: ${odd}`);
+}
+//Bonus: Create an object called scorers which contains all the players who scored with properties { Gnarby: 1, Hummels: 1,Lewandowski: 2}
