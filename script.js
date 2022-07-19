@@ -435,7 +435,7 @@ for (const player of game.scored) {
   scorers[player] ? scorers[player]++ : (scorers[player] = 1);
 }
 console.log(scorers); */
-
+/* 
 //Sets
 const ordersSet = new Set([
   'Pasta',
@@ -471,3 +471,36 @@ console.log(
   new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
 ); //3
 console.log(new Set('jonasschmedtmann').size); //11
+ */
+
+//Maps: Fundamentals
+const rest = new Map();
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firesnze, Italy');
+console.log(rest.set(2, 'Lisbon Portugal')); //{'name' => 'Classico Italiano', 1 => 'Firesnze, Italy', 2 => 'Lisbon Portugal'}
+
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open :D')
+  .set(false, 'We are closed :(');
+console.log(rest);
+console.log(rest.get('name')); //Classico Italiano
+console.log(rest.get(true)); //We are open :D
+console.log(rest.get(1)); //Firesnze, Italy
+
+const time = 8;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close'))); //We are closed :(
+
+console.log(rest.has('categories')); //true
+rest.delete(2);
+// rest.clear();
+console.log(rest.size); //7
+rest.set([1, 2], 'Test');
+console.log(rest.get([1, 2])); //undefined
+const arr = [3, 4];
+rest.set(arr, 'Testi');
+console.log(rest.get(arr)); //Testi
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
