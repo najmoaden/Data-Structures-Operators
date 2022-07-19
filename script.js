@@ -414,19 +414,24 @@ for (const [day, { open, close }] of entries) {
 //Coding Challenge#2
 
 //1. Loop over game.scored array & print to the console ("Goal 1: Lewandowski")
-let sum = 0;
-for (const score of game.scored) {
-  console.log(`Goal ${(sum += 1)}: ${score}`);
+for (const [i, player] of game.scored.entries()) {
+  console.log(`Goal ${i + 1}: ${player}`);
 }
 //2. Use loop to calculate the average odd and log it to the console
 const gameValue = Object.values(game.odds);
-console.log(gameValue);
-for (const avg of gameValue) sum += avg;
-console.log(sum);
-console.log(`${sum / 3}`);
+let average = 0;
+for (const odd of gameValue) average += odd;
+average /= gameValue.length;
+console.log(average);
 //3. Print the odds to the console like this: Odd of victory Bayern Munich: 1.33, Odd of draw: 3.25, Odd of victory Borrussia Dortmund: 6.5
 const gameEntries = Object.entries(game.odds);
 for (const [team, odd] of gameEntries) {
-  console.log(`Odd of ${team === 'x' ? 'draw' : 'victory'}: ${odd}`);
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr}: ${odd}`);
 }
 //Bonus: Create an object called scorers which contains all the players who scored with properties { Gnarby: 1, Hummels: 1,Lewandowski: 2}
+const scorers = {};
+for (const player of game.scored) {
+  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+}
+console.log(scorers);
