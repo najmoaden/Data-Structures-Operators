@@ -557,7 +557,7 @@ console.log(question.entries());
 console.log(question.keys());
 console.log(question.values());
  */
-
+/* 
 //Coding Challenge#3
 
 //1. Create an array 'events' of the different game events that happened (no duplicates)
@@ -583,4 +583,47 @@ for (const [time, event] of gameEvents) {
       ? `[FIRST HALF] ${time}: ${event}`
       : `[SECOND HALF] ${time}: ${event}`;
   console.log(soccerEvent);
-}
+} */
+
+//Working with Strings - Part 1
+
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]); //A
+console.log(plane[1]); //3
+console.log(plane[2]); //2
+console.log(plane[3]); //0
+console.log('B737'[0]); //B
+
+console.log(airline.length); //16
+console.log('B737'.length); //4
+
+console.log(airline.indexOf('r')); //6
+console.log(airline.lastIndexOf('r')); //10
+console.log(airline.indexOf('Portugal')); //8
+
+console.log(airline.slice(4)); //Air Portugal
+console.log(airline.slice(4, 7)); //Air
+
+console.log(airline.slice(0, airline.indexOf(' '))); //TAP
+console.log(airline.slice(airline.lastIndexOf(' ') + 1)); //Portugal
+
+console.log(airline.slice(-2)); //al
+console.log(airline.slice(1, -1)); //AP Air Portuga
+
+const checkMiddleSeat = function (seat) {
+  //B and E are middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('You got the middle seat 😬');
+  else console.log('You got lucky 😎');
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+console.log(new String('jonas'));
+console.log(typeof new String('jonas'));
+
+console.log(typeof new String('jonas').slice(1));
