@@ -584,7 +584,7 @@ for (const [time, event] of gameEvents) {
       : `[SECOND HALF] ${time}: ${event}`;
   console.log(soccerEvent);
 } */
-
+/* 
 //Working with Strings - Part 1
 
 const airline = 'TAP Air Portugal';
@@ -627,3 +627,28 @@ console.log(new String('jonas'));
 console.log(typeof new String('jonas'));
 
 console.log(typeof new String('jonas').slice(1));
+ */
+
+//Working with Strings - Part 2
+
+const airline = 'TAP Air Portugal';
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+//Fix capitalization in name
+
+const passenger = 'jOnas';
+const passengerLower = passenger.toLowerCase();
+const passengerCorrrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrrect);
+
+//Comparing emails
+
+const email = 'hello@jonas.io';
+const loginEmail = 'Hello@Jonas.Io \n';
+
+const lowerEmail = loginEmail.toLowerCase();
+const trimmedEmail = lowerEmail.trim();
+console.log(trimmedEmail);
