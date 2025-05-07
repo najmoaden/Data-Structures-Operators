@@ -38,8 +38,52 @@ const restaurant = {
       `Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`
     );
   },
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient, otherIngredients);
+  },
 };
 
+//// /////////////////////////////////////////////
+// Rest Pattern and Parameters
+
+restaurant.orderPizza('mushrooms', 'spinach', 'olives', 'onion');
+
+restaurant.orderPizza('mushrooms');
+
+// 1) Destructuring
+//SPREAD, because on RIGHT side of =
+const arr = [1, 2, ...[3, 4]];
+console.log('SPREAD: ', arr);
+
+//REST, because on LEFT side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log('REST: ', a, b, others);
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
+//Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+// 2) Functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 2, 5, 3, 2, 1, 4);
+
+const x = [23, 5, 7];
+add(...x);
+
+/*
 //// /////////////////////////////////////////////
 // Spread Operator
 
@@ -89,7 +133,7 @@ const letters = [...str, '', 'S.'];
 console.log(letters);
 console.log(...str);
 
-/*
+
 /////////////////////////////////////////////////
 // Destructuring Objects
 restaurant.orderDelivery({
