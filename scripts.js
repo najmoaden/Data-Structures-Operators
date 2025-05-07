@@ -44,6 +44,37 @@ const restaurant = {
 };
 
 //// /////////////////////////////////////////////
+// Short Circuiting (&& and ||)
+console.log('--- OR ---');
+// Use ANY data type, return ANY data type, short-circuiting
+console.log(3 || 'Jonas');
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+
+//restaurant.numGuests = ;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+
+console.log('--- AND ---');
+console.log(0 && 'Jonas');
+console.log(7 && 'Jonas');
+
+console.log('Hello' && 23 && null && 'Jonas');
+
+// Practical example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
+/*
+//// /////////////////////////////////////////////
 // Rest Pattern and Parameters
 
 restaurant.orderPizza('mushrooms', 'spinach', 'olives', 'onion');
@@ -83,7 +114,7 @@ add(8, 2, 5, 3, 2, 1, 4);
 const x = [23, 5, 7];
 add(...x);
 
-/*
+
 //// /////////////////////////////////////////////
 // Spread Operator
 
