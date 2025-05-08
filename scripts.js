@@ -43,6 +43,18 @@ const restaurant = {
   },
 };
 
+///////////////////////////////////////////////////
+// Looping Arrays: The for-of Loop
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+
+for (const item of menu) console.log(item);
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+//console.log([...menu.entries()]);
+
 //// /////////////////////////////////////////////
 // Code Challenge 1
 
@@ -74,7 +86,7 @@ operator.
 Test data for 6.: First, use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'.
 Then, call the function again with players from game.scored
 */
-
+/*
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
