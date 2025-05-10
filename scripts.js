@@ -43,6 +43,49 @@ const restaurant = {
   },
 };
 
+///// /////////////////////////////////////////////
+// New Operations to Make Sets Useful
+
+const italianFoods = new Set([
+  'pasta',
+  'gnocchi',
+  'tomatoes',
+  'olive oil',
+  'garlic',
+  'basil',
+]);
+
+const mexicanFoods = new Set([
+  'tortillas',
+  'beans',
+  'rice',
+  'tomatoes',
+  'avocado',
+  'garlic',
+]);
+
+const commmonFoods = italianFoods.intersection(mexicanFoods);
+console.log('Intersection:', commmonFoods);
+console.log(...commmonFoods);
+
+const italianMexicanFusion = italianFoods.union(mexicanFoods);
+console.log('Union:', italianMexicanFusion);
+
+console.log(...new Set([...italianFoods, ...mexicanFoods]));
+
+const uniqueItalianFoods = italianFoods.difference(mexicanFoods);
+console.log('Difference italian:', uniqueItalianFoods);
+
+const uniqueMexicanFoods = mexicanFoods.difference(italianFoods);
+console.log('Difference mexican:', uniqueMexicanFoods);
+
+const uniqueItalianMexicanFoods =
+  italianFoods.symmetricDifference(mexicanFoods);
+console.log(uniqueItalianMexicanFoods);
+
+console.log(italianFoods.isDisjointFrom(mexicanFoods)); // false
+
+/*
 ////// ////////////////////////////////////////////
 // Sets
 
