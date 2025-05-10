@@ -43,6 +43,49 @@ const restaurant = {
   },
 };
 
+////// //////////////////////////////////////////////
+// Working with Strings - Part 1
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B737'[0]);
+
+console.log(airline.length);
+console.log('B737'.length);
+
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('Portugal'));
+console.log(airline.indexOf('portugal')); // -1
+
+console.log(airline.slice(4)); // Air Portugal
+console.log(airline.slice(4, 7)); // Air
+
+console.log(airline.slice(0, airline.indexOf(' '))); // TAP
+console.log(airline.slice(airline.lastIndexOf(' ') + 1)); // Portugal
+console.log(airline.slice(-2)); // al
+console.log(airline.slice(1, -1)); // AP Air Portuga
+
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') {
+    console.log('You got the middle seat!');
+  } else {
+    console.log('You got lucky!');
+  }
+};
+
+checkMiddleSeat('11B'); // B seat
+checkMiddleSeat('23C'); // Lucky seat
+checkMiddleSeat('3E'); // E seat
+
+console.log(new String('Jonas'));
+console.log(typeof new String('Jonas'));
+console.log(typeof new String('Jonas').slice(1));
 ////// ///////////////////////////////////////////////
 // Coding Challenge #3
 /*
@@ -61,7 +104,7 @@ average, every 9 minutes" (keep in mind that a game has 90 minutes)
 whether it's in the first half or second half (after 45 min) of the game, like this:
 [FIRST HALF] 17:⚽ GOAL
 */
-
+/*
 const gameEvents = new Map([
   [17, '⚽ GOAL'],
   [36, '🔁 Substitution'],
